@@ -1,8 +1,13 @@
+<script>
+import NavbarComp from '@/components/NavbarComp.vue'
+export default {
+  components: {
+    NavbarComp
+  }
+}
+</script>
 <template>
-  <header>
-    <router-link :to="{ name: 'home' }">Home</router-link>
-    <router-link to="/computadores">Computadores</router-link>
-  </header>
+  <NavbarComp />
   <main>
     <RouterView />
   </main>

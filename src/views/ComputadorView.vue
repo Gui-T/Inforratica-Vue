@@ -33,32 +33,61 @@ export default{
 </script>
 
 <template>
-  <h1>computador</h1>
+  <h1>Computadores</h1>
   <hr />
-  <div class="form">
-    <input type="text" v-model="computador.cliente" placeholder="Cliente" />
-    <input type="text" v-model="computador.placa_mae" placeholder="Placa mãe" />
-    <input type="text" v-model="computador.placa_de_video" placeholder="Placa de vídeo" />
-    <input type="text" v-model="computador.processador" placeholder="Processador" />
-    <input type="text" v-model="computador.memoria_ram" placeholder="Memória Ram" />
-    <input type="text" v-model="computador.hd" placeholder="HD" />
-    <input type="text" v-model="computador.ssd" placeholder="SSD" />
-    <input type="text" v-model="computador.fonte" placeholder="Fonte" />
-    <input type="text" v-model="computador.gabinete" placeholder="Gabinete">
-    <input type="number" v-model="computador.preco" placeholder="Preço" />
-    <input type="text" v-model="computador.imagem" placeholder="Imagem do PC" />
-    <button @click="salvar">Salvar</button>
+  <div class="input-group mb-3">
+    <input class="form-control" type="text" v-model="computador.cliente" placeholder="Cliente" />
+    <input class="form-control" type="text" v-model="computador.placa_mae" placeholder="Placa mãe" />
+    <input class="form-control" type="text" v-model="computador.placa_de_video" placeholder="Placa de vídeo" />
+    <input class="form-control" type="text" v-model="computador.processador" placeholder="Processador" />
+    <input class="form-control" type="text" v-model="computador.memoria_ram" placeholder="Memória Ram" />
+    <input class="form-control" type="text" v-model="computador.hd" placeholder="HD" />
+    <input class="form-control" type="text" v-model="computador.ssd" placeholder="SSD" />
+    <input class="form-control" type="text" v-model="computador.fonte" placeholder="Fonte" />
+    <input class="form-control" type="text" v-model="computador.gabinete" placeholder="Gabinete">
+    <input class="form-control" type="number" v-model="computador.preco" placeholder="Preço" />
+    <input class="form-control" type="text" v-model="computador.imagem" placeholder="Imagem do PC" />
+  </div>
+  <div class="divButtonSalvar">
+    <button id="buttonSalvar" class="btn btn-light" @click="salvar">Salvar</button>
   </div>
   <hr />
-  <ul>
-    <li v-for="computador in computadores" :key="computador.id">
+  <ul class="list-group">
+    <li class="list-group-item" v-for="computador in computadores" :key="computador.id">
       <span @click="editar(computador)">
         ({{ computador.id }}) - {{ computador.cliente }} - {{ computador.placa_mae }} - {{ computador.placa_de_video }} - {{ computador.processador }} - {{ computador.memoria_ram }} - {{ computador.hd }}
         - {{ computador.ssd }} - {{ computador.fonte }} - {{ computador.gabinete }} - {{ computador.preco }} - {{ computador.imagem }} -
       </span>
-      <button @click="excluir(computador)">X</button>
+      <button class="btn btn-light" @click="excluir(computador)"><img src="https://cdn-icons-png.flaticon.com/512/860/860829.png" alt=""></button>
     </li>
   </ul>
 </template>
 
-<style></style>
+<style>
+h1 {
+  text-align: center;
+}
+button img {
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+input {
+  margin: 3px;
+  width: 100px;
+  height: 40px;
+  
+}
+#buttonSalvar {
+  margin: 3px;
+  width: 100px;
+  height: 40px;
+}
+.divButtonSalvar {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+</style>
