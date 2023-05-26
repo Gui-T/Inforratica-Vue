@@ -44,6 +44,7 @@ export default{
     <input type="text" v-model="computador.hd" placeholder="HD" />
     <input type="text" v-model="computador.ssd" placeholder="SSD" />
     <input type="text" v-model="computador.fonte" placeholder="Fonte" />
+    <input type="text" v-model="computador.gabinete" placeholder="Gabinete">
     <input type="number" v-model="computador.preco" placeholder="Preço" />
     <input type="text" v-model="computador.imagem" placeholder="Imagem do PC" />
     <button @click="salvar">Salvar</button>
@@ -53,7 +54,7 @@ export default{
     <li v-for="computador in computadores" :key="computador.id">
       <span @click="editar(computador)">
         ({{ computador.id }}) - {{ computador.cliente }} - {{ computador.placa_mae }} - {{ computador.placa_de_video }} - {{ computador.processador }} - {{ computador.memoria_ram }} - {{ computador.hd }}
-        - {{ computador.ssd }} - {{ computador.fonte }} - {{ computador.preco }} - {{ computador.imagem }} -
+        - {{ computador.ssd }} - {{ computador.fonte }} - {{ computador.gabinete }} - {{ computador.preco }} - {{ computador.imagem }} -
       </span>
       <button @click="excluir(computador)">X</button>
     </li>
