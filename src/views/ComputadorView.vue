@@ -58,7 +58,7 @@ export default{
         ({{ computador.id }}) - {{ computador.cliente }} - {{ computador.placa_mae }} - {{ computador.placa_de_video }} - {{ computador.processador }} - {{ computador.memoria_ram }} - {{ computador.hd }}
         - {{ computador.ssd }} - {{ computador.fonte }} - {{ computador.gabinete }} - {{ computador.preco }} - {{ computador.imagem }} -
       </span>
-      <button class="btn btn-light" @click="excluir(computador)"><img src="https://cdn-icons-png.flaticon.com/512/860/860829.png" alt=""></button>
+      <button class="btn btn-light" @click="excluir(computador.id)"><img src="https://cdn-icons-png.flaticon.com/512/860/860829.png" alt=""></button>
     </li>
   </ul>
 </template>
