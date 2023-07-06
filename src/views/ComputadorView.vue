@@ -79,7 +79,9 @@ export default{
       <td class="table-dark">{{ computador.gabinete }}</td>
       <td class="table-dark">{{ computador.preco }}</td>
       <td class="table-dark">{{ computador.imagem }}</td>
-      <td class="table-dark"><button class="btn btn-danger" @click="excluir(computador)"><img src="https://cdn-icons-png.flaticon.com/512/860/860829.png" alt=""></button></td>
+      <td class="table-dark">
+        <button class="btn btn-danger" @click="excluir(computador)"><img src="https://cdn-icons-png.flaticon.com/512/860/860829.png" alt=""></button>
+      </td>
     </tbody>
   </table>
 </template>
