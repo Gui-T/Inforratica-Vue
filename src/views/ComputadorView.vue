@@ -30,6 +30,7 @@ export default{
     },
   },
 };
+
 </script>
 
 <template>
@@ -64,9 +65,9 @@ export default{
       <th class="table-dark" scope="col">Gabinete</th>
       <th class="table-dark" scope="col">Preço</th>
       <th class="table-dark" scope="col">Imagem</th>
-      <th class="table-dark" scope="col">Excluir</th>
+      <th class="table-dark" scope="col">Ações</th>
     </thead>
-    <tbody @click="editar(computador)">
+    <tbody>
       <td class="table-dark">({{ computador.id }})</td>
       <td class="table-dark">{{ computador.cliente }}</td>
       <td class="table-dark">{{ computador.placa_mae }}</td>
@@ -78,9 +79,10 @@ export default{
       <td class="table-dark">{{ computador.fonte }}</td>
       <td class="table-dark">{{ computador.gabinete }}</td>
       <td class="table-dark">{{ computador.preco }}</td>
-      <td class="table-dark">{{ computador.imagem }}</td>
-      <td class="table-dark">
-        <button class="btn btn-danger" @click="excluir(computador)"><img src="https://cdn-icons-png.flaticon.com/512/860/860829.png" alt=""></button>
+      <td><input type="image" :src="computador.imagem" alt="Imagem do PC" style="width: 80px; height: 80px; padding:0;"></td>
+      <td class="acoes">
+        <button id="botoes" class="btn btn-danger" @click="excluir(computador)"><img src="https://cdn-icons-png.flaticon.com/512/860/860829.png" alt=""></button>
+        <button id="botoes" class="btn btn-warning" @click="editar(computador)"><img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt=""></button>
       </td>
     </tbody>
   </table>
@@ -101,18 +103,20 @@ input {
   margin: 3px;
   width: 100px;
   height: 40px;
-  
+}
+.table {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#botoes {
+  margin: 2px;
 }
 #buttonSalvar {
   margin: 3px;
   width: 100px;
   height: 40px;
   color: #fff;
-  border: none;
-  border-radius: 5px;
-  transition: 0.5s;
-  transform: scale(1.1);
-
 }
 .divButtonSalvar {
   text-align: center;
